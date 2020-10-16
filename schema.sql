@@ -1,5 +1,8 @@
--- ROOT TABLE
+-- Define all tables and relations in the Solve Database (MySQL)
+create database solve;
 
+
+-- ROOT TABLE
 create table users(
 	user_id char(36) not null,
 	user_creation_time datetime not null,
@@ -14,7 +17,6 @@ create table users(
 
 
 -- LOOKUP TABLES
-
 create table locations(
 	id int auto_increment not null,
 	city varchar(50) not null,
@@ -69,7 +71,6 @@ create table characters(
 
 
 -- EVENT PROPERTY TABLES
-
 create table events(
 	id int auto_increment not null,
 	user_id char(36) not null,
