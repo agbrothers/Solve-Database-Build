@@ -1,6 +1,3 @@
-show tables;
-
-
 -- ROOT TABLE
 
 create table users(
@@ -85,7 +82,6 @@ create table user_properties(
 	id int auto_increment not null,
 	user_id char(36) not null,
 	event_id int not null,
-
 	current_ab_test_group VARCHAR(40),
 	total_session_count INT,
 	current_story_manifest_id CHAR(12),
@@ -134,7 +130,6 @@ create table appsflyer_properties(
 	id int auto_increment not null,
 	user_id char(36) not null,
 	event_id int not null,
-
 	appsflyer_install_time CHAR(23),
 	appsflyer_platform VARCHAR(15),
 	appsflyer_bundle_id CHAR(22),
@@ -201,7 +196,6 @@ create table event_properties(
 	id int auto_increment not null,
 	user_id char(36) not null,
 	event_id int not null,
-
 	attempt_count INT,
 	points_overall_target INT,
 	coming_from_id CHAR(12),
@@ -329,7 +323,7 @@ create table UserTests(
 );
 
 
--- Add Users Foreign Keys
+-- ADD FOREIGN KEYS TO USERS
 alter table users
 add foreign key (location_id)
 references locations(id)
@@ -354,5 +348,3 @@ alter table users
 add foreign key (ab_test_id)
 references ab_tests(id)
 on delete cascade;
-
-
